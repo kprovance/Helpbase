@@ -1,0 +1,23 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Helpbase 1.0\n"
+"POT-Creation-Date: 2014-01-23 21:10-0500\n"
+"PO-Revision-Date: 2014-01-23 21:10-0500\n"
+"Last-Translator: C. Kevin Provance <kprovance@suncoasttechware.com>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: D:\\xampp\\apps\\helpdesk\\htdocs\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/admin_settings.php:74
+msgid "(HIDDEN IN DEMO)"
+msgstr "Gud an tite"
+
+msgid "Language"
+msgstr "Language"

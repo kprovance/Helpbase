@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML; 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>HESK step by step guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="docs_style.css" />
+</head>
+
+<body>
+<div id="wrapper">
+<div id="main">
+<h1><span class="dest">HESK&trade;</span> PHP Help Desk Software</h1>
+
+<table width="100%">
+<tr>
+<td width="50%" style="text-align:left;vertical-align:top">
+ <ul class="nobullets">
+ <li>Version: 2.5.1 from 8th August 2013</li>
+ <li>Developed by: Klemen Stirn</li>
+ <li><a href="http://www.hesk.com">Help Desk Software HESK</a></li>
+ <li><a href="http://www.phpjunkyard.com">Free PHP Scripts</a></li>
+ </ul>
+</td>
+<td width="50%" style="text-align:right;vertical-align:top">
+ <ul class="nobullets">
+ <li><a href="index.html">HESK documentation</a></li>
+ <li><b>Step by step guide</b></li>
+ <li><a href="quick-guide.html">Quick guide</a></li>
+ <li><a href="changelog.html">Changelog</a></li>
+ </ul>
+</td>
+</tr>
+</table>
+
+<h2>HESK STEP BY STEP GUIDE</h2>
+
+<ul class="nobullets">
+    <li><a href="#install"><b>Install HESK</b></a></li>
+    <li><a href="#upgrade">Upgrade from old HESK version</a></li>
+    <li><a href="#help">Help &amp; Support</a></li>
+    <li><a href="#piping">Email piping</a></li>
+    <li><b>Customize HESK</b>
+    <ul>
+        <li><a href="#customize">Customize the look</a></li>
+        <li><a href="#emails">Customize emails</a></li>
+        <li><a href="#translate">Translate HESK to your language</a></li>
+    </ul>
+    </li>
+    <li><a href="#other">Misc...</a></li>
+</ul>
+
+<h2 id="install">&raquo; Install HESK</h2>
+
+<div class="error">
+<p style="font-weight:bold">Please take 5 minutes to read the installation instructions carefully and completely! This will ensure a proper and easy installation.</p>
+</div>
+
+&nbsp;
+
+<div class="notice">
+<p>Before installing HESK you will need to obtain your MySQL database information, such as <b>database name</b>, <b>database user</b> and <b>password</b>.
+You need to get this information from your HOSTING COMPANY, HESK CANNOT help you find it.</p>
+</div>
+
+<p>&nbsp;<br /><span class="tip">TIP:</span> For a small fee you can have HESK installed by the author himself, visit <a href="https://www.hesk.com/install.php"><b>HESK installation service</b></a>.</p>
+
+<p><span class="tip">TIP:</span> Want a hassle-free help desk working in minutes? Consider a <a href="http://www.hesk.com/remote-help-desk.php"><b>remote help desk</b></a> instead.<br />&nbsp;</p>
+
+<p style="font-weight:bold">Installation steps:</p>
+
+<ol>
+<li><p>Connect with FTP to the <i>public folder</i> of your server where the rest of your Web site is.</p>
+<p><span class="tip">TIP:</span> The public folder is usually called &quot;<b>public_html</b>&quot;, &quot;www&quot;, &quot;site&quot; or &quot;htdocs&quot;.</p>
+<p><span class="tip">TIP:</span> Learn how to FTP files, read my simple <a href="http://www.phpjunkyard.com/tutorials/ftp-chmod-tutorial.php">FTP and CHMOD tutorial</a></p>
+</li>
+<li><p>Create a new folder where you will install HESK. Name it anything you like, for example &quot;helpdesk&quot; or &quot;support&quot;.<br />
+Example: /public_html/helpdesk<br />
+Corresponding URL: http://www.site.com/helpdesk</p></li>
+<li><p>Upload all HESK files to your server. PHP files must be transferred in ASCII mode and images in BINARY mode.</p>
+<p><span class="tip">TIP:</span> Most FTP clients will select the proper transfer mode automatically so you needn't worry about this.</li>
+<li>
+<p>Make sure the following files/folders are writable by PHP:<br />
+- file <b>hesk_settings.inc.php</b> - on Unix (Linux) servers CHMOD this file to <b>666</b> (rw-rw-rw-)<br />
+- directory <b>attachments</b> - on Unix (Linux) servers CHMOD this directory to <b>777</b> (rwxrwxrwx)</p>
+<p>Setting permissions on some servers is not required. You may skip this step and return to it later if required.</p>
+<p><span class="tip">TIP:</span> Learn to CHMOD files, read my simple <a href="http://www.phpjunkyard.com/tutorials/ftp-chmod-tutorial.php">FTP and CHMOD tutorial</a></p>
+<p><span class="tip">TIP:</span> CHMOD doesn't work on Windows, you might need to ask your hosting company to set file permissions.</p>
+</li>
+<li>
+<p>Open <b>hesk/install</b> in your browser, for example (modify to your URL):<br />
+http://www.site.com/helpdesk/install</p>
+</li>
+<li>
+<p>The HESK setup script will run. Click <b>New install</b> and follow instructions through 4 steps:</p>
+   <ul>
+   <li><b>STEP 1: License agreement</b> - read the HESK License agreement and confirm that you agree with the terms.</li>
+   <li><b>STEP 2: Check setup</b> - the script will test your server to see if all required settings are correct and advise solutions to any problems.</li>
+   <li><b>STEP 3: Database settings</b> - enter your MySQL database settings and the setup script will test them.<br />
+       <span class="dest">You need to get correct MySQL database information from your hosting company!</span></li>
+   <li><b>STEP 4: Setup database tables</b> - everything OK, the script will install MySQL tables.<br />&nbsp;</li>
+   </ul>
+</li>
+<li>
+<p style="font-weight:bold">Before closing the upgrade script <span class="dest">DELETE the &quot;install&quot; directory from your server!</span></p>
+</li>
+<li>
+<p>Well done, now it's time to setup your help desk! Click the Continue link in the install script or open the <b>admin</b> folder in your browser, for example:<br />
+http://www.site.com/helpdesk/admin/</p>
+
+<p>If asked for a password login using default information:<br />
+-&gt; Default username: <b><i>Administrator</i></b><br />
+-&gt; Default password: <b><i>admin</i></b></p>
+
+<p><span class="tip">TIP:</span> HESK passwords are CaSe SeNSiTiVe (&quot;ADMIN&quot; is not the same as &quot;admin&quot;) while usernames are not.</p>
+</li>
+
+<li><p>Click the <b>Settings</b> link in the top menu to get to the settings page (if not there already)</p></li>
+
+<li>
+<p>Take some time and get familiar with all the available settings. Most should be self-explanatory, for additional information
+about each setting click the [<a href="Javascript:void(0)"><b>?</b></a>] link for help about the current setting.</p>
+<p>Don't forget to click the <b>Save changes</b> button at the bottom of the settings page to save your settings!</p>
+</li>
+<li>
+<p>Things to do next</p>
+
+<ul>
+
+<li><p>Click the &quot;Profile&quot; link to set your name, e-mail, signature and *** CHANGE YOUR PASSWORD ***.</p></li>
+
+<li><p>To create additional staff accounts visit the &quot;Users&quot; page. The default user (Administrator) cannot be deleted.</p></li>
+
+<li><p>Add new categories (departments) on the &quot;Categories&quot; page. The default category cannot be deleted, but it can be renamed.</p></li>
+
+<li><p>You can create canned responses on the &quot;Canned responses&quot; page. These are pre-written replies to common support questions.</p></li>
+
+<li><p>To access and manage your knowledgebase click the &quot;Knowledgebase&quot; link.</p>
+
+<p>Knowledgebase is a collection of answers to frequently asked questions (FAQ) and articles which provide self-help resources to your customers. You can arrange articles into categories and sub categories.</p>
+
+<p>A comprehensive and well-written knowledgebase can drastically reduce the number of support tickets you receive and save a lot of your time.</p></li>
+
+</ul>
+
+&nbsp;
+
+</li>
+
+<li><p>Customers can submit tickets and browse knowledgebase by visiting the main HESK folder, for example:<br />
+<b>http://www.site.com/helpdesk</b></p></li>
+
+<li><p style="font-weight:bold"><span class="dest">If you have problems/questions see the &quot;HELP and Troubleshooting&quot; section further down.</span></p></li>
+
+<li><p>Support HESK development by <a href="https://www.hesk.com/buy.php">purchasing a license</a></p></li>
+<li><p>Good luck using HESK!<br />&nbsp;</p></li>
+</ol>
+
+<h2 id="upgrade">&raquo; Upgrading from old versions</h2>
+
+<div class="error">
+<p style="font-weight:bold">Please take 5 minutes to read the upgrade instructions carefully and completely! This will ensure a proper and easy upgrade.</p>
+</div>
+
+<p><b>Known upgrade issues</b></p>
+
+<ul>
+<li>HESK language will be reset to English due to new text added.</li>
+<li>HESK requires UTF-8 encoding, any other encoding will not work properly.</li>
+<li>HESK does not support PHP 4. Upgrade to PHP 5.</li>
+<li>Passwords may not work after upgrade from older versions (<a href="http://www.hesk.com/knowledgebase/?article=22">reset password</a>).</li>
+<li>If you purchased a license you may need to <a href="https://www.hesk.com/license">download a new license</a>.</li>
+</ul>
+
+<p><span class="tip">TIP:</span> Perform the upgrade in low-traffic hours when your Web site receives the least amount of visits.</p>
+
+<p style="font-weight:bold">Upgrade steps:</p>
+
+<ol>
+<li><p><span class="dest" style="font-weight:bold">BACKUP YOUR EXISTING HESK DATABASE AND FILES</span><br />... or don't blame me if something goes wrong.</p>
+<p><span class="dest">Note that HESK has now moved to and requires UTF-8 encoding!</span> If you are using some other encoding make 101% sure your database is
+backed up, because HESK upgrade will attempt to convert the database to UTF-8! Also, when translating this version, make sure the encoding in text.php is set to UTF-8 and
+file saved as UTF-8 without byte order mark (BOM)!</p>
+<p><span class="tip">TIP:</span> Most hosting companies allow you to backup files and databases from your control panel. Contact your host if not sure how to do that.</p></li>
+<li>
+<p>Delete or rename these HESK files/folders on your server:<br />
+- /help_files<br />
+- /language <i>(if you modified any email templates save them)</i><br />
+- hesk_style.css<br />
+- hesk_javascript.js<br />
+</p>
+<p>HESK upgrade script might instruct you to delete some additional files.</p>
+</li>
+<li>
+<p>Upload HESK files to your server <b>EXCEPT</b> these ones (do NOT upload these files):<br />
+- hesk_settings.inc.php<br />
+- header.txt<br />
+- footer.txt</p>
+
+<p>Images must be transferred to your server in BINARY mode and all other HESK files in ASCII mode. Most FTP clients will select the correct mode automatically.</p>
+</li>
+<li>
+<p>Make sure the following files/folders are writable by the script:<br />
+- file <b>hesk_settings.inc.php</b> - on Unix (Linux) servers CHMOD this file to <b>666</b> (rw-rw-rw-)<br />
+- directory <b>attachments</b> - on Unix (Linux) servers CHMOD this directory to <b>777</b> (rwxrwxrwx)</p>
+</li>
+<li>
+<p>Open <b>hesk/install</b> in your browser, for example:<br />
+http://www.site.com/helpdesk/install</p>
+</li>
+<li>
+<p>HESK setup script will show up on the install URL. Click <b>Update existing install</b> and follow instructions. The update consists of 4 steps:</p>
+   <ul>
+   <li><b>STEP 1: License agreement</b> - read the HESK License agreement and confirm that you agree with the terms.</li>
+   <li><b>STEP 2: Check setup</b> - the script will test your server to see if all required settings are correct and advise solutions to any problems.</li>
+   <li><b>STEP 3: Database settings</b> - check your MySQL database settings and the script will test them.<br />
+       <span class="dest">The settings must be the same as with your old HESK installation</span></li>
+   <li><b>STEP 4: Update database tables</b> - everything OK, the script will update existing MySQL tables.<br />&nbsp;</li>
+   </ul>
+</li>
+<li>
+<p style="font-weight:bold">Before closing the upgrade script, <span class="dest">DELETE the &quot;install&quot; directory on your server!</span></p>
+</li>
+<li><p>Open admin panel (http://www.site.com/helpdesk/admin) and login with your username. If the password doesn't work anymore try <a href="http://www.hesk.com/knowledgebase/?article=22">reseting it</a>.</p></li>
+<li><p>Test HESK to make sure the upgrade was successful and everything works. You may need to modify your Help Desk title and Custom field settings if they are not displaying correctly.</p></li>
+<li>
+<p>If you are using Email piping, set <i>&quot;From:&quot; email</i> in your HESK settings to your email piping address, because HESK now allows customers to reply to tickets by replying to the notification email.</p>
+<p>If you own a HESK license you might need to <a href="https://www.hesk.com/license">download a new one</a>.</p>
+<p>If not, consider supporting HESK by <a href="https://www.hesk.com/buy.php">purchasing a license</a>.</p></li>
+<li><p>Good luck using HESK!<br />&nbsp;</p></li>
+</ol>
+
+<h2 id="help">&raquo; HELP and Troubleshooting</h2>
+
+<h3>1. What is CHMOD and FTP?</h3>
+
+<p>I prepared a simple <a href="http://www.phpjunkyard.com/tutorials/ftp-chmod-tutorial.php">FTP and CHMOD tutorial</a> that will help you FTP files to your server and set correct CHMOD settings.<br />&nbsp;</p>
+
+
+<h3>2. I did CHMOD hesk_settings.inc.php and attachments folder, but I still get an error.</h3>
+
+<p>CHMOD doesn't work on all servers, Windows (IIS) servers, for example, don't understand CHMOD command.
+You need to make sure the <i>Internet Guest Account</i> (IUSR) has permission to modify, write and read the required
+files. Further instructions can be found <a href="http://developers.phpjunkyard.com/viewtopic.php?t=1406">HERE</a> (username: <b>php</b> password: <b>php</b>).</p>
+
+<p>In case you still can't get it to work, contact your hosting company
+and ask them to set modify/write/read permissions for file <b>hesk_settings.inc.php</b> and directory <b>attachments</b>.<br />&nbsp;</p>
+
+
+<h3>3. The security image doesn't show up correctly.</h3>
+
+<p>For the image to work your server must have GD library installed. You can test if your server supports all the required functions; upload
+<a href="http://www.phpjunkyard.com/extras/gd_test.zip">gd_test.php</a> file to your server then open it in your browser. If you get an error or empty page when opening gd_test.php you should either ask your
+hosting company to install the GD library for PHP or disable the anti-SPAM image in the HESK admin panel under &quot;Settings&quot;.<br />&nbsp;</p>
+
+<h3>4. The installation (or upgrade) script doesn't move from the &quot;License agreement&quot; page.</h3>
+
+<p>You did check that you agree with the license agreement, didn't you? In that case your server probably has problems with PHP sessions.
+Download <a href="http://www.phpjunkyard.com/extras/session_test.zip">Session test files</a>,
+upload them to your server and open <b>session_test.php</b> in your browser.</p>
+<p>Click the CLICK HERE FOR PAGE 2 link. If you get &quot;$_SESSION['test'] is set to:&quot; <b>FALSE</b>
+contact your hosting company and ask them to check if PHP session are working normally. If you get <b>TRUE</b> instead of FALSE the problem is something else,
+try searching for help <a href="http://developers.phpjunkyard.com">PHPJunkyard Support forum</a> (username: <b>php</b> password: <b>php</b>).<br />&nbsp;</p>
+
+
+<h3>5. I get an <span class="dest">Your session has expired</span> error when trying to login to admin panel.</h3>
+
+<p>Your server probably has problems with PHP sessions. Download <a href="http://www.phpjunkyard.com/extras/session_test.zip">Session test files</a>,
+upload them to your server and open <b>session_test.php</b> in your browser.</p>
+<p>Click the CLICK HERE FOR PAGE 2 link. If you get &quot;$_SESSION['test'] is set to:&quot; <b>FALSE</b>
+contact your hosting company and ask them to check if PHP session are working normally. If you get <b>TRUE</b> instead of FALSE the problem is something else,
+try searching for help <a href="http://developers.phpjunkyard.com">PHPJunkyard Support forum</a> (username: <b>php</b> password: <b>php</b>).<br />&nbsp;</p>
+
+
+<h3>6. HESK doesn't send out ticket e-mails</h3>
+
+<p>Please see this knowledgebase article: <a href="http://www.hesk.com/knowledgebase/?article=25">HESK is not sending any mail</a><br />&nbsp;</p>
+
+
+<h3>7. File uploads don't work.</h3>
+
+<p>For file uploads to work your server must have <b>file.uploads</b> enabled in the PHP configuration and the <b>attachments</b>
+folder must be writable by HESK. There are also other PHP settings that can limit file uploads,
+especially the size and number of attachments. Usually keeping the attachment size limit
+under 2 Mb (2048 Kb) works, but also try lower values, for example 0.5 Mb (512 Kb).</p>
+
+<p>Important PHP settings for file uploads are <i>upload_max_filesize</i>, <i>upload_tmp_dir</i>, <i>post_max_size</i> and <i>max_input_time</i> directives in php.ini.
+If you are not sure what your settings are, you will need to contact your hosting company and
+ask them what file size limits should you use for file uploads.<br />&nbsp;</p>
+
+
+<h3>8. What do statuses mean (New, Replied, Waiting Reply, Resolved, In Progress, On Hold)?</h3>
+
+<ul>
+<li><b>New</b> - newely created ticket with no replies yet.</li>
+<li><b>Waiting reply</b> - this tickets waits for your reply.</li>
+<li><b>Replied</b> - you have replied to this ticket, waiting for reply from other party.</li>
+<li><b>Resolved</b> - the ticket has been resolved, no more replies necessary.</li>
+<li><b>In Progress</b> - a special status that can be set by staff members if needed.</li>
+<li><b>On Hold</b> - a special status that can be set by staff members if needed.<br />&nbsp;</li>
+</ul>
+
+
+<h3>9. I am still having problems!</h3>
+
+<ol>
+<li><p>Visit <a href="http://www.hesk.com/knowledgebase">HESK Knowledgebase</a></p></li>
+<li><p>Search <a href="http://developers.phpjunkyard.com">HESK Support forum</a> (username: <b>php</b> password: <b>php</b>)<br />&nbsp;</p></li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p>Since this script is free no support is guaranteed. If you can't get the script to work please go
+through this readme file again carefully and repeat the installation step-by-step (delete old
+files and folders from the server then try again).</p>
+
+<h2 id="piping">&raquo; Email piping</h2>
+
+<p>HESK supports <i>email piping</i> and <i>POP3 fetching</i>, two methods of creating tickets from incoming emails.</p>
+
+<p>To enable email piping for your help desk follow this <a href="http://www.hesk.com/knowledgebase/?article=58">email piping tutorial</a>.</p>
+
+<p>To use POP3 fetching instead (might be easier) read <a href="http://www.hesk.com/knowledgebase/?article=65">setting up POP3 fetching</a>.<br />&nbsp;</p>
+
+
+<h2 id="customize">&raquo; Customize the look</h2>
+
+<ul>
+<li><p>HTML code to be used throughout HESK may be pasted into <b>header.txt</b> and <b>footer.txt</b> files.</p></li>
+<li><p>HESK images are in the <b>img</b> folder.</p></li>
+<li><p>Style (CSS) code is in the <b>css/helpbase.css</b> file.</p></li>
+<li><p>For detailed information please see <a href="http://www.hesk.com/knowledgebase/?article=33">this knowledgebase article</a>.<br />&nbsp;</p></li>
+</ul>
+
+<h2 id="translate">&raquo; Translate HESK to your language</h2>
+
+<p>HESK supports multiple languages, translating it to your language is easy.</p>
+
+<p>To translate HESK read <a href="http://www.hesk.com/knowledgebase/?article=34">How do I translate HESK</a>.<br />&nbsp;</p>
+
+<h2 id="emails">&raquo; Customize email messages</h2>
+
+<p>To customize email messages sent by HESK read <a href="http://www.hesk.com/knowledgebase/?article=35">Customize email templates</a>.<br />&nbsp;</p>
+
+<h2 id="other">&raquo; More FREE PHP Scripts</h2>
+
+<p>Get more FREE PHP scripts here: <a href="http://www.phpjunkyard.com/">PHP Scripts</a>.</p>
+
+<h2>&raquo; Rate this script</h2>
+
+<p><a href="http://php.resourceindex.com/detail/04946.html" rel="nofollow">Rate this Script @ The PHP Resource Index</a></p>
+
+<p><a href="http://www.hotscripts.com/listing/free-helpdesk-software-hesk/" rel="nofollow">Rate this Script @ Hot Scripts</a></p>
+
+<p>&nbsp;</p>
+
+<p style="text-align:center">&copy; Copyright <a href="http://www.hesk.com">HESK.COM</a> 2005-2013. All rights reserved.</p>
+
+</div>
+</div>
+</body>
+</html>

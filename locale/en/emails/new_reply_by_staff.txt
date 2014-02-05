@@ -1,0 +1,12 @@
+Dear %%NAME%%,
+
+Our staff has just replied to your ticket "%%SUBJECT%%".
+
+You can view the ticket here:
+%%TRACK_URL%%
+
+
+Sincerely,
+
+%%SITE_TITLE%%
+%%SITE_URL%%
