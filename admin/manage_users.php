@@ -11,9 +11,17 @@
  * @copyright   (c) 2013 - 2014, C. Kevin Provance.  All Rights Reserved.
  */
 
-global $helpbase;
-
 define('EXECUTING', true);
+
+if (!class_exists('HelpbaseManageUsers')) {
+    class HelpbaseManageUsers {
+        private $helpbase = null;
+        
+        public function __construct() {
+            
+        }
+    }
+}
 
 include_once('../helpbase.class.php');
 $helpbase = new HelpbaseCore(true);
